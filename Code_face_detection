@@ -21,7 +21,7 @@ fix_img=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
 plt.imshow(fix_img)
 
 #SETTING THE SIZE AND COLOUR OF THE RECTANGLE BOXES
-def detect_faces_eyes(fix_img):
+def detect_faces(fix_img):
     face_rects=face_classifier.detectMultiScale(fix_img)
     for(x,y,w,h) in face_rects:
         cv2.rectangle(fix_img,
@@ -31,6 +31,6 @@ def detect_faces_eyes(fix_img):
                      7)
     return fix_img
  
-#TO DISPLAY THE FINAL IMAGE WITH FACE AND EYES DETECTED
-result=detect_faces_eyes(fix_img)
+#TO DISPLAY THE FINAL IMAGE WITH FACE DETECTED
+result=detect_faces(fix_img)
 plt.imshow(result)
